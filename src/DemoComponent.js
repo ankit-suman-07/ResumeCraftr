@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { v4 as uuid } from "uuid";
+
 export default function DemoComponent() {
   const [data, setData] = useState([]);
   // Loading initial data from the server
@@ -14,12 +16,13 @@ export default function DemoComponent() {
     evt.preventDefault();
     if (evt.key === 'Enter' && evt.target.value !== '') {
       const name = evt.target.value;
+      const unique_id = uuid();
       fetch('/api', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ id: data.length + 1, name }),
+        body: JSON.stringify({ id: unique_id + 1, name }),
       })
         .then((res) => res.json())
         .then((newData) => setData([...data, newData]))
