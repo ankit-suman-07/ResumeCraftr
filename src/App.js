@@ -1,21 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import DemoComponent from './DemoComponent';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './pages/home/Home';
+import Show from './pages/show-resume/Show';
+import Create from './pages/create-resume/Create';
+import Edit from './pages/edit-resume/Edit';
+import Delete from './pages/delete-resume/Delete';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-        <DemoComponent />
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/resume/create' element={<Create />} />
+        <Route path='/resume/show/:id' element={<Show />} />
+        <Route path='/resume/edit/:id' element={<Edit />} />
+        <Route path='/resume/delete/:id' element={<Delete />} />
+      </Routes>
+    </Router>
   );
 }
 

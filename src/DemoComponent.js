@@ -17,12 +17,13 @@ export default function DemoComponent() {
     if (evt.key === 'Enter' && evt.target.value !== '') {
       const name = evt.target.value;
       const unique_id = uuid();
+      const temp = "Demo";
       fetch('/api', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ id: unique_id + 1, name }),
+        body: JSON.stringify({ id: unique_id + 1, name, temp }),
       })
         .then((res) => res.json())
         .then((newData) => setData([...data, newData]))

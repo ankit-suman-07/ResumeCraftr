@@ -23,6 +23,23 @@
     {
       "id": "04619b10-d57f-47c8-a05a-07b2a59097721",
       "name": "Blue"
+    },
+    {
+      "id": "3348a393-8e57-4338-8fe2-a04b63c623e21",
+      "name": "green"
+    },
+    {
+      "id": "ca91fdfa-e6fd-4cd1-9f1f-69c525aa0bf21",
+      "name": "greeeen"
+    },
+    {
+      "id": "213e3578-2180-49a8-a0ea-598f23bd40c01",
+      "name": "magenta"
+    },
+    {
+      "id": "c2571f25-4bda-4101-aa84-33591196d43e1",
+      "name": "red",
+      "temp": "Demo"
     }
   ]
 }
